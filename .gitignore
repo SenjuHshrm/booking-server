@@ -1,1 +1,5 @@
 node_modules
+!uploads/profile-img
+uploads/profile-img/*
+!uploads/staycation
+uploads/staycation/*
