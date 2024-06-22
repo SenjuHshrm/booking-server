@@ -1,0 +1,18 @@
+Request Logs
+Date: 05-31-2024
+
+05-31-2024 02:27:41 AM
+Controller: staycation.controller -> applyProprietorship
+Code: STC-0001
+Info: STC-0001 - staycation validation failed: location: Cast to string failed for value "{ type: '', coordinates: [] }" (type Object) at path "location", discounts: Cast to embedded failed for value "["discount_1"]" (type string) at path "discounts" because of "ObjectParameterError", descriptionText: Path `descriptionText` is required.
+
+05-31-2024 02:37:39 AM
+Controller: staycation.controller -> applyProprietorship
+Code: STC-0001
+Info: STC-0001 - staycation validation failed: location: Cast to string failed for value "{ type: '', coordinates: [] }" (type Object) at path "location", descriptionText: Path `descriptionText` is required.
+
+05-31-2024 02:57:13 AM
+Controller: staycation.controller -> applyProprietorship
+Code: STC-0001
+Info: STC-0001 - staycation validation failed: media.cover: Path `media.cover` is required.
+

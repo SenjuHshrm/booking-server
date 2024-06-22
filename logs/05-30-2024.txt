@@ -1,0 +1,343 @@
+Request Logs
+Date: 05-30-2024
+
+05-30-2024 03:49:51 PM
+Controller: mailer.util -> sendPassword
+Code: MLR-0001
+Info: MLR-0001 - ENOENT: no such file or directory, open 'C:\Projects\Ennovation\booking-system\booking-api\src/view/password.html'
+
+05-30-2024 03:49:55 PM
+Controller: mailer.util -> sendPassword
+Code: MLR-0001
+Info: MLR-0001 - ENOENT: no such file or directory, open 'C:\Projects\Ennovation\booking-system\booking-api\src/view/password.html'
+
+05-30-2024 05:56:18 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 05:59:43 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 05:59:53 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:00:29 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:00:32 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:12:10 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:12:29 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:15:42 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:17:46 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:18:48 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:19:26 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:20:56 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:22:18 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:27:32 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 06:28:38 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:19:44 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:23:33 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:25:07 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:26:27 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:26:45 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:27:09 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:29:54 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:34:28 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:35:19 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:36:36 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:37:03 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:37:21 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:39:28 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:41:24 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:42:11 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:42:47 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:43:54 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:46:33 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:55:38 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 08:56:47 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 09:53:16 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 09:55:36 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 10:07:04 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 10:08:32 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 10:08:38 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 10:09:30 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 10:52:21 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 10:57:43 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:01:06 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:02:44 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:03:05 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:03:31 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:03:49 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:04:03 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:06:54 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:07:07 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:08:19 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:09:47 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:27:59 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:28:28 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:39:32 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:42:49 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:43:55 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-30-2024 11:44:13 PM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:25:53 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:26:07 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:26:39 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:32:15 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:34:30 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:35:22 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+05-31-2024 12:35:52 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+

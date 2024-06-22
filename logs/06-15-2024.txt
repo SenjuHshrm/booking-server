@@ -1,0 +1,8 @@
+Request Logs
+Date: 06-15-2024
+
+06-15-2024 12:55:14 PM
+Controller: staycation.controller -> applyProprietorship
+Code: STC-0001
+Info: STC-0001 - staycation validation failed: placeType: Validator failed for path `placeType` with value ``
+
