@@ -76,9 +76,9 @@ app.get('/token', (req, res) => {
     });
 });
 app.use('/api/', routes_1.Routes);
-// app.get('/*', (req: Request, res: Response) => {
-//   res.sendFile(join(__dirname, '/app/index.html'))
-// })
+app.get('/*', (req, res) => {
+    res.sendFile((0, path_1.join)(__dirname, '/app/index.html'));
+});
 httpServer.listen(app.get('port'), () => {
     (0, config_1.dbConfig)();
     // pubClient.connect()
