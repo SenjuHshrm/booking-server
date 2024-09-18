@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const passport_1 = __importDefault(require("passport"));
-const config_1 = require("./../../../../config");
 const auth_service_1 = __importDefault(require("../../auth.service"));
 const postAuthRoutes = (0, express_1.Router)()
-    .post('/login', config_1.csrf.doubleCsrfProtection, config_1.csrfErrorHandler, passport_1.default.authenticate('local', { session: false }), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // .post('/login', csrf.doubleCsrfProtection, csrfErrorHandler, passport.authenticate('local', { session: false }), async (req: Request, res: Response) => {
+    .post('/login', passport_1.default.authenticate('local', { session: false }), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let resp = yield auth_service_1.default.checkStatus(req.user, req.body.currentDate);
     if (resp === null)
         return res.status(500).json({ code: 'AUTH-0006' });
