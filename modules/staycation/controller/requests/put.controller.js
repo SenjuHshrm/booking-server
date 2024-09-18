@@ -7,6 +7,10 @@ const express_1 = require("express");
 const staycation_service_1 = __importDefault(require("../../staycation.service"));
 const putStaycationRoutes = (0, express_1.Router)()
     .put('/update/:id', (req, res) => {
+    return staycation_service_1.default.updateStaycation(res, req.params.id, req.body);
+})
+    .put('/update-from-admin/:id', (req, res) => {
+    return staycation_service_1.default.updateStaycationFromAdmin(res, req.params.id, req.body);
 })
     .put('/update-listing/:id', (req, res) => {
     return staycation_service_1.default.updateListing(res, req.params.id, req.body.isListed);

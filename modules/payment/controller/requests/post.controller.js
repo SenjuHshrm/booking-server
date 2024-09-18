@@ -5,10 +5,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const payment_service_1 = __importDefault(require("./../../payment.service"));
-const utils_1 = require("./../../../../utils");
+const passport_1 = __importDefault(require("passport"));
+const config_1 = require("./../../../../config");
 const postPaymentRoutes = (0, express_1.Router)()
-    .post('/add', (req, res) => {
-    let paymentEncrypted = Object.assign(Object.assign({}, req.body), { acctNum: (req.body.acctNum) ? (0, utils_1.encrypt)(req.body.acctNum) : '', cardNum: (req.body.cardNum) ? (0, utils_1.encrypt)(req.body.cardNum) : '', cvv: (req.body.cvv) ? (0, utils_1.encrypt)(req.body.cvv) : '' });
-    return payment_service_1.default.addPayment(res, paymentEncrypted);
+    .post('/payment-process', (req, res) => {
+    console.log(req.body.data);
+    return res.sendStatus(200);
+})
+    .post('/create-payment-intent', config_1.csrf.doubleCsrfProtection, config_1.csrfErrorHandler, passport_1.default.authenticate('jwt', { session: false }), (req, res) => {
+    return payment_service_1.default.createPaymentIntent(res, req.body, req.user);
+})
+    .post('/attach-to-payment-intent/:piId', config_1.csrf.doubleCsrfProtection, config_1.csrfErrorHandler, passport_1.default.authenticate('jwt', { session: false }), (req, res) => {
+    return payment_service_1.default.attachToPaymentIntent(res, req.body, req.params.piId);
+})
+    .post('/save-pm-id', config_1.csrf.doubleCsrfProtection, config_1.csrfErrorHandler, passport_1.default.authenticate('jwt', { session: false }), (req, res) => {
+    return payment_service_1.default.savePaymentMethodId(res, req.body);
 });
 exports.default = postPaymentRoutes;

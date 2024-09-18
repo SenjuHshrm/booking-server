@@ -27,7 +27,7 @@ let addStatic = (res, type, values) => __awaiter(void 0, void 0, void 0, functio
             statics.markModified('values');
             statics.save();
         }
-        return res.sendStatus(201);
+        return res.status(201).json({ success: true });
     }
     catch (e) {
         (0, utils_1.logger)('global-static.controller', 'addStatic', e.message, 'GST-0001');
@@ -67,6 +67,11 @@ let deleteStatic = (res, id) => __awaiter(void 0, void 0, void 0, function* () {
 let getStaticByType = (res, type) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let statics = (yield GlobalStatic_schema_1.default.findOne({ type }).exec());
+        console.log(statics);
+        if (!statics) {
+            let gs = yield new GlobalStatic_schema_1.default({ type, values: [] }).save();
+            return res.status(200).json({ data: gs.values });
+        }
         return res.status(200).json({ data: statics.values });
     }
     catch (e) {
@@ -74,11 +79,25 @@ let getStaticByType = (res, type) => __awaiter(void 0, void 0, void 0, function*
         return res.status(500).json({ code: 'GST-0005' });
     }
 });
+let deleteValueFromStatic = (res, type, val) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let s = (yield GlobalStatic_schema_1.default.findOne({ type }).exec());
+        s.values = s.values.filter((v) => JSON.stringify(v) !== JSON.stringify(val));
+        s.markModified('values');
+        s.save();
+        return res.status(200).json({ success: true });
+    }
+    catch (e) {
+        (0, utils_1.logger)('global-static.controller', 'deleteValueFromStatic', e.message, 'GST-0006');
+        return res.status(500).json({ code: 'GST-0006' });
+    }
+});
 const GlobalStaticService = {
     addStatic,
     getStatic,
     updateStatic,
     deleteStatic,
-    getStaticByType
+    getStaticByType,
+    deleteValueFromStatic
 };
 exports.default = GlobalStaticService;

@@ -36,7 +36,7 @@ const dbConfig = () => {
                     xName: environment_config_1.env.ADMIN_EXTNAME
                 },
                 img: environment_config_1.env.ADMIN_IMG,
-                address: environment_config_1.env.ADMIN_ADDRESS,
+                // address: env.ADMIN_ADDRESS,
                 status: 'active',
                 identificationStat: 'approved'
             });

@@ -6,4 +6,5 @@ var EStaticType;
     EStaticType[EStaticType["amenity"] = 0] = "amenity";
     EStaticType[EStaticType["bank"] = 1] = "bank";
     EStaticType[EStaticType["service_fee"] = 2] = "service_fee";
+    EStaticType[EStaticType["earning_fee"] = 3] = "earning_fee";
 })(EStaticType || (exports.EStaticType = EStaticType = {}));

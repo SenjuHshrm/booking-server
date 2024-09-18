@@ -40,10 +40,14 @@ const config_1 = require("./../../config");
 const PersonalAccessToken_schema_1 = require("./schema/PersonalAccessToken.schema");
 const Auth_schema_1 = __importDefault(require("./schema/Auth.schema"));
 const utils_1 = require("./../../utils");
+const User_schema_1 = __importDefault(require("./../user/schema/User.schema"));
+const payment_service_1 = __importDefault(require("./../payment/payment.service"));
+const moment_1 = __importDefault(require("moment"));
 let generateToken = (res, a) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let auth = a;
-        let token = auth.generateToken();
+        let user = (yield User_schema_1.default.findById(auth.userId).exec());
+        let token = auth.generateToken(user.img);
         new PersonalAccessToken_schema_1.PersonalAccessToken({
             userId: auth.userId,
             accessToken: token.access,
@@ -78,7 +82,8 @@ let requestToken = (res, accessToken) => __awaiter(void 0, void 0, void 0, funct
             return res.status(403).json({ msg: 'FORBIDDEN' });
         if (!jwt.verify(pat.refreshToken, config_1.env.JWT_SECRET))
             return res.status(403).json({ msg: 'SESSION_EXPIRED' });
-        let { access, refresh } = auth.generateToken();
+        let user = (yield User_schema_1.default.findById(auth.userId).exec());
+        let { access, refresh } = auth.generateToken(user.img);
         pat.accessToken = access;
         pat.refreshToken = refresh;
         pat.save();
@@ -89,9 +94,101 @@ let requestToken = (res, accessToken) => __awaiter(void 0, void 0, void 0, funct
         return res.status(500).json({ code: 'AUTH-0003' });
     }
 });
+let updatePassword = (res, userId, password) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let auth = (yield Auth_schema_1.default.findOne({ userId }).exec());
+        auth.generateHash(password);
+        auth.save();
+        return res.status(200).json({ success: true });
+    }
+    catch (e) {
+        (0, utils_1.logger)('auth.controller', 'updatePassword', e.message, 'AUTH-0004');
+        return res.status(500).json({ code: 'AUTH-0004' });
+    }
+});
+let googleLogin = (res, authData, userData) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let test = (yield Auth_schema_1.default.findOne({ google: authData.id, email: authData.email }).exec());
+        if (!test) {
+            let u = (yield new User_schema_1.default({
+                name: {
+                    fName: userData.firstName,
+                    mName: '',
+                    lName: userData.lastName,
+                    xName: ''
+                },
+                img: userData.photoUrl,
+                status: 'active',
+                identificationStat: 'pending',
+                approvedAsProprietorOn: ''
+            }).save());
+            let a = (yield new Auth_schema_1.default({
+                userId: u.id,
+                email: authData.email,
+                google: authData.id,
+                access: ['customer']
+            }).save());
+            let token = a.generateToken(u.img);
+            new PersonalAccessToken_schema_1.PersonalAccessToken({
+                userId: u.id,
+                accessToken: token.access,
+                refreshToken: token.refresh
+            }).save();
+            payment_service_1.default.addCustomer(u.id, { fName: userData.firstName, lName: userData.lastName, email: authData.email, password: '' }, '');
+            return res.status(200).json({ token: token.access });
+        }
+        else {
+            let u = (yield User_schema_1.default.findById(test.userId).exec());
+            let t = test.generateToken(u.img);
+            new PersonalAccessToken_schema_1.PersonalAccessToken({
+                userId: test.userId,
+                accessToken: t.access,
+                refreshToken: t.refresh
+            }).save();
+            return res.status(200).json({ token: t.access });
+        }
+    }
+    catch (e) {
+        (0, utils_1.logger)('auth.controller', 'googleLogin', e.message, 'AUTH-0005');
+        return res.status(500).json({ code: 'AUTH-0005' });
+    }
+});
+let checkStatus = (auth, currentDate) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let a = auth;
+        let resp = { res: false, msg: '' };
+        let user = (yield User_schema_1.default.findById(a.userId).exec());
+        switch (user.status) {
+            case 'active':
+                resp = { res: true, msg: '' };
+                break;
+            case 'suspended':
+                let date = (0, moment_1.default)(currentDate, 'MM/DD/YYYY');
+                let suspensionDue = (0, moment_1.default)(user.suspendedUntil);
+                if (suspensionDue.diff(date, 'days') > 0)
+                    resp = { res: false, msg: `Your account is suspended until ${(0, moment_1.default)(user.suspendedUntil).format('MMMM DD, YYYY')}` };
+                user.status = 'active';
+                user.suspendedUntil = '';
+                user.save();
+                resp = { res: true, msg: '' };
+                break;
+            case 'terminated':
+                resp = { res: false, msg: 'Your account is terminated.' };
+                break;
+        }
+        return resp;
+    }
+    catch (e) {
+        (0, utils_1.logger)('auth.controller', 'checkStatus', e.message, 'AUTH-0006');
+        return null;
+    }
+});
 const AuthService = {
     generateToken,
     logout,
-    requestToken
+    requestToken,
+    updatePassword,
+    googleLogin,
+    checkStatus
 };
 exports.default = AuthService;

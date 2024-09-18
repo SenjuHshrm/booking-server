@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sendPassword = void 0;
+exports.sendUploadLinkSupportDocs = exports.sendPassword = void 0;
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const logger_util_1 = require("./logger.util");
 const config_1 = require("./../config");
@@ -38,3 +38,24 @@ const sendPassword = (email, passwordText) => {
     }
 };
 exports.sendPassword = sendPassword;
+const sendUploadLinkSupportDocs = (email, link) => {
+    try {
+        let file = (0, fs_1.readFileSync)(`${global.appRoot}/views/support-docs-link.html`, { encoding: 'utf-8' });
+        let template = handlebars_1.default.compile(file);
+        let replacements = {
+            link
+        };
+        let html = template(replacements);
+        let msg = {
+            from: config_1.env.SU_EMAIL,
+            to: email,
+            subject: 'Request for Supporting Documents (Proprietor Application)',
+            html
+        };
+        transporter.sendMail(msg);
+    }
+    catch (e) {
+        (0, logger_util_1.logger)('mailer.util', 'sendUploadLinkSupportDocs', e.message, 'MLR-0002');
+    }
+};
+exports.sendUploadLinkSupportDocs = sendUploadLinkSupportDocs;

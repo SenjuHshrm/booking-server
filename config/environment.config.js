@@ -9,6 +9,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 exports.env = {
     HOST: process.env.HOST,
+    DOMAIN_NAME: process.env.DOMAIN_NAME,
     NODE_ENV: process.env.NODE_ENV,
     ORIGIN: (_a = process.env.ORIGIN) === null || _a === void 0 ? void 0 : _a.split(' '),
     JWT_SECRET: process.env.JWT_SECRET,
@@ -31,5 +32,14 @@ exports.env = {
     ADMIN_ADDRESS: process.env.ADMIN_ADDRESS,
     ENCRYPT_ALGORITHM: process.env.ENCRYPT_ALGORITHM,
     ENCRYPT_KEY: process.env.ENCRYPT_KEY,
-    ENCRYPT_IV: process.env.ENCRYPT_IV
+    ENCRYPT_IV: process.env.ENCRYPT_IV,
+    PAYMONGO_PK: process.env.PAYMONGO_PK,
+    PAYMONGO_SK: process.env.PAYMONGO_SK,
+    PAYMONGO_URL: process.env.PAYMONGO_URL,
+    PAYMONGO_URL_VER: process.env.PAYMONGO_URL_VER,
+    PAYMONGO_PAYMENT_METHODS: JSON.parse(process.env.PAYMONGO_PAYMENT_METHODS),
+    CSRF_SECRET: process.env.CSRF_SECRET,
+    COOKIE_SECRET: process.env.COOKIE_SECRET,
+    CSRF_COOKIE_NAME: process.env.CSRF_COOKIE_NAME,
+    CSRF_HEADER_NAME: process.env.CSRF_HEADER_NAME
 };

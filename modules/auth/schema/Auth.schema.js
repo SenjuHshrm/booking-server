@@ -29,14 +29,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jwt = __importStar(require("jsonwebtoken"));
-const auth_interface_1 = require("./../auth.interface");
 const config_1 = require("./../../../config");
 let AuthSchema = new mongoose_1.Schema({
     userId: { type: mongoose_1.Types.ObjectId, ref: 'user' },
     email: { type: String, unique: true, required: true },
-    password: { type: String, required: true, },
+    password: { type: String },
     google: mongoose_1.Schema.Types.Mixed,
-    access: { type: [String], required: true, enum: { values: Object.keys(auth_interface_1.EUserType) } }
+    access: { type: [String], required: true }
 }, {
     timestamps: true
 });
@@ -46,9 +45,9 @@ AuthSchema.methods.generateHash = function (password) {
 AuthSchema.methods.compareHash = function (password) {
     return bcryptjs_1.default.compareSync(password, this.password);
 };
-AuthSchema.methods.generateToken = function () {
+AuthSchema.methods.generateToken = function (img) {
     return {
-        access: jwt.sign({ sub: this.userId, access: this.access }, config_1.env.JWT_SECRET, { expiresIn: '5m' }),
+        access: jwt.sign({ sub: this.userId, access: this.access, img }, config_1.env.JWT_SECRET, { expiresIn: '5m' }),
         refresh: jwt.sign({ sub: this.userId, email: this.email }, config_1.env.JWT_SECRET, { expiresIn: '1w' })
     };
 };

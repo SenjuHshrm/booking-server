@@ -17,3 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./header.middleware"), exports);
 __exportStar(require("./staycation-gallery.middleware"), exports);
 __exportStar(require("./profile-img.middleware"), exports);
+__exportStar(require("./user-verification.middleware"), exports);
+__exportStar(require("./img-carousel.middleware"), exports);
+__exportStar(require("./upload-docs.middleware"), exports);
+__exportStar(require("./review.middleware"), exports);

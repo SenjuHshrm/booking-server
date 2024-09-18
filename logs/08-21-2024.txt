@@ -1,0 +1,58 @@
+Request Logs
+Date: 08-21-2024
+
+08-21-2024 08:10:03 AM
+Controller: createWebhook -> config
+Code: CFG-WBHK-0001
+Info: CFG-WBHK-0001 - Cannot read properties of undefined (reading 'id')
+
+08-21-2024 08:11:25 AM
+Controller: createWebhook -> config
+Code: CFG-WBHK-0001
+Info: CFG-WBHK-0001 - Cannot read properties of undefined (reading 'id')
+
+08-21-2024 08:12:52 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+08-21-2024 08:26:40 AM
+Controller: payment.controller -> addCustomer
+Code: PYMT-0001
+Info: PYMT-0001 - Cannot read properties of undefined (reading 'id')
+
+08-21-2024 08:28:14 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+08-21-2024 08:29:37 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+08-21-2024 08:45:58 AM
+Controller: createWebhook -> config
+Code: CFG-WBHK-0001
+Info: CFG-WBHK-0001 - Cannot read properties of undefined (reading 'id')
+
+08-21-2024 08:50:19 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+08-21-2024 08:57:12 AM
+Controller: auth.controller -> requestToken
+Code: AUTH-0003
+Info: AUTH-0003 - Cannot read properties of null (reading 'sub')
+
+08-21-2024 02:39:07 PM
+Controller: createWebhook -> config
+Code: CFG-WBHK-0001
+Info: CFG-WBHK-0001 - Cannot read properties of undefined (reading 'id')
+
+08-21-2024 04:08:19 PM
+Controller: createWebhook -> config
+Code: CFG-WBHK-0001
+Info: CFG-WBHK-0001 - Cannot read properties of undefined (reading 'id')
+

@@ -8,7 +8,9 @@ const express_1 = require("express");
 const delete_controller_1 = __importDefault(require("./requests/delete.controller"));
 const get_controller_1 = __importDefault(require("./requests/get.controller"));
 const post_controller_1 = __importDefault(require("./requests/post.controller"));
+const put_controller_1 = __importDefault(require("./requests/put.controller"));
 exports.authRoutes = (0, express_1.Router)()
     .use('/get', get_controller_1.default)
     .use('/post', post_controller_1.default)
-    .use('/delete', delete_controller_1.default);
+    .use('/delete', delete_controller_1.default)
+    .use('/put', put_controller_1.default);
